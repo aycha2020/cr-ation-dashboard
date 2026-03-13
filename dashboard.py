@@ -5,17 +5,9 @@ import matplotlib.pyplot as plt
 from sqlalchemy import create_engine
 
 
-# Connexion PostgreSQL
 
-from sqlalchemy import create_engine
-engine = create_engine(
-    "postgresql+psycopg2://user:Aishahbb22@localhost:5432/dashboard_streamlit_superstore",
-    connect_args={"options": "-c client_encoding=utf8"}
-)
 
-query = "SELECT * FROM orders"
-
-df = pd.read_sql(query, engine)
+df = pd.read_csv("data.csv")
 
 # Dashboard Title
 
